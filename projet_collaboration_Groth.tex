@@ -1,6 +1,18 @@
 \documentclass[12pt]{article}
 
-\input{macro.tex}
+\usepackage{fullpage}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+\usepackage{titlesec}
+\titleformat{\section}[hang]{\normalfont\bfseries\Large}{}{0pt}{}
+\titleformat{\subsection}[hang]{\normalfont\bfseries\large}{subsection}{0pt}{}
+
+\setlength{\topmargin}{0pt} % Pas de marge en haut 
+
+\usepackage{fancyhdr}
+
 
 \date{}
 \title{\vspace{-1cm}\hrule width \hsize \kern 1mm \hrule width \hsize height 2pt \vspace{5mm}
@@ -23,19 +35,21 @@
 \textbf{Accompagnants}~: Lucie Fréret (research associate), Joachim-André Sarr (PhD) \\
 \textbf{Période~:} Février à Avril 2020 (3 mois)
 
+\paragraph{Coordonnée par~:} T. Pichard (Pr. Assistant CMAP; teddy.pichard@polytechnique.edu) et M. Massot (Pr. CMAP; marc.massot@polytechnique.edu)
+
 \paragraph{Projet de recherche~:}
-Modélisation multi-échelle et méthodes numériques innovantes pour les écoulements turbulents à phases séparées et dispersées\\
-{\it coordonné par T. Pichard (teddy.pichard@polytechnique.edu) et M. Massot (marc.massot@polytechnique.edu)}
+Modélisation multi-échelle et méthodes numériques innovantes pour les écoulements turbulents à phases séparées et dispersées
+
 \paragraph{Projet d'enseignements~:}
 Cours Doctoral...
 
 \paragraph{Collaborations~:} \begin{itemize}
 \item \textbf{au CMAP~:} P. Cordesse (PhD), R. Di Battista (PhD), V. Giovangigli (DR CNRS), L.~Gouarin (IR CNRS), R. Letournel (PhD), M. Massot (Pr), M.-A. N'Guessan (PhD), T. Pichard (Pr Assistant),  L. Reboul (PhD), L. S\'eries (IR Calcul), Q. Wargnier (PhD)
-\item \textbf{au LPP~:} A. Bourdon (DR CNRS), A. Alvarez-Laguna (postdoc CMAP et LPP)
+\item \textbf{au LPP~:} A. Alvarez-Laguna (postdoc CMAP et LPP), A. Bourdon (DR CNRS)
 \item \textbf{externes~:} P. Kestener (Maison de la Simulation), S. Kokh (CEA Saclay), F. Laurent-Nègre (CR CNRS à CentraleSupélec), H. Leclerc (IR LMO Orsay), T. Magin (Pr VKI Bruxelles), A. Vié (MCF à CentraleSupélec).
 \end{itemize}
 Certaines de ces collaborations sont liées à l'\textbf{Initiative HPC\at{}Maths} et ont pour objectif le développement de nouvelles générations de méthodes numériques et leur implémentation sur architectures parallèles. Notamment, les projets de recherche et d'enseignement s'inscrivent dans la mise en place et l'exploitation du mésocentre de calcul et de l'animation qui est naturellement associée. \\
-Les autres collaborations sont liées à l'encadrement de la thèse de Roxane Letournel au CMAP et à l'encadrement de la thèse de L. Reboul au CMAP et au LPP.
+Les autres collaborations sont liées à l'encadrement des thèses de Roxane Letournel au CMAP et de Louis Reboul au CMAP et au LPP.
 
 \paragraph{Contexte de la collaboration~:} Clinton Groth est professeur à l'institut des études spatiales de l'université de Toronto (UTIAS) et est à la tête du groupe de dynamique des fluides numérique (CFD) et propulsion. C'est un expert mondialement reconnu en théorie cinétique, autour de la méthode des moments et en calcul haute performance (HPC). Il a obtenu de nombreux prix prestigieux au Canada. Il sera en disponibilité pendant l'année scolaire 2019-2020. Nous collaborons avec lui et son équipe sur ces sujets depuis de nombreuses années. Il est officiellement impliqué dans la thèse de R. Letournel au CMAP et pourra également interagir avec d'autres doctorants sur les thèmes de la modélisation et de la simulation des écoulements diphasiques, de la dynamique des gaz raréfiés et autour des méthodes numériques innovantes (adaptation en espace et en temps pour les problèmes multi-échelles) pour les écoulements complexes. Sa collaboration sera un bénéfice pour les membres du laboratoire, notamment T. Pichard récemment recruté. De multiples interactions sont envisagées avec les doctorants et post-doctorants du groupe de M. Massot et il donnera une série de séminaires. Sa venue devrait mener à des publications de premier plan impliquant doctorants, post-doctorants et jeunes professeurs assistants. 
 
@@ -43,13 +57,13 @@ Les autres collaborations sont liées à l'encadrement de la thèse de Roxane Le
 Les chambres de combustions dans les industries aéronautique et automobile reposent sur l'atomisation en fines gouttelettes de combustible liquide dans un gaz. La modélisation de ces écoulements présentent de nombreuses difficultés, notamment parce qu'ils sont turbulents, diphasiques et multi-échelles. Nous cherchons à améliorer le domaine de validité de modèles cinétiques pour les écoulements de gouttelettes et construire des méthodes numériques adaptées à ces modèles. Les principaux axes de ce projet de collaborations sont les suivants~:
 
 \paragraph{Modèles cinétiques\\ } 
-Les écoulements de gouttelettes peuvent être décrits par une fonction densité, ou fonction de distribution, de gouttelettes dépendant d'une variable de position et de variables cinétiques (typiquement une variable de vitesse). Cette fonction de distribution satisfait une équation de type Williams-Boltzmann. Certains des termes de cette équation doivent être modélisés en fonction de la physique considérée. \\
+Les écoulements de gouttelettes peuvent être décrits par une fonction densité, ou fonction de distribution, de gouttelettes dépendant d'une variable de position et de variables cinétiques (typiquement une variable de vitesse). Cette fonction de distribution satisfait une équation de type Williams-Boltzmann. Certains des termes de cette équation doivent être modélisés en fonction de la physique considérée. \\ \\
 %
 \underline{Problématiques}~: \begin{itemize}
 \item Les interactions entre les gouttes liquides et le gaz peuvent être modélisées par rétrocouplage. Ce problème représente une première étape de la thèse de R. Letournel.
-\item La description de la géométrie des gouttes dans les modèles cinétiques peut être améliorée par un choix approprié de variables cinétiques géométriques. 
+\item La description de la géométrie des gouttes dans les modèles cinétiques peut être améliorée par un choix approprié de variables cinétiques géométriques. \\
 \end{itemize}
-\underline{Collaborations}~: R. Di Battista, R. Letournel, M. Massot, T. Pichard, F. Laurent-Nègre, A.~Vié
+\underline{Collaborations}~: R. Di Battista, F. Laurent-Nègre, R. Letournel, M. Massot, T. Pichard, A.~Vié
 
 
 \paragraph{Méthode des moments\\ }
@@ -57,39 +71,39 @@ La méthode des moments est un outil couramment utilisé pour la discrétisation
 %
 \underline{Problématiques}:\begin{itemize}
 \item Étudier le domaine de réalisabilité dans un cadre général et appliqué aux équations cinétiques étudiées.
-\item Construire des fermetures réalisables, adaptées à la physique modélisée et utilisable numériquement.
+\item Construire des fermetures réalisables, adaptées à la physique modélisée et utilisable numériquement. \\
 \end{itemize}
 \underline{Collaborations}~: R. Di Battista, R. Letournel, M. Massot, T. Pichard, F. Laurent-Nègre, A.~Vié
 
 
-\paragraph{HPC \\ }  À partir de ces équations aux moments, nous souhaitons développer des méthodes numériques d'ordre élevé préservant la réalisabilité. Ces méthodes nécessitent une précision élevée pour nos applications dû à la complexité de la physique modélisée et des différentes échelles de l'écoulement. De plus, ces méthodes doivent préserver la réalisabilité afin que les équations aux moments discrétisées demeurent bien-posées. \\
-%
+\paragraph{HPC \\ }  À partir de ces équations aux moments, nous souhaitons développer des méthodes numériques d'ordre élevé préservant la réalisabilité. Ces méthodes nécessitent une précision élevée pour nos applications dû à la complexité de la physique modélisée et des différentes échelles de l'écoulement. De plus, ces méthodes doivent préserver la réalisabilité afin que les équations aux moments discrétisées demeurent bien-posées. \\ \\
+% 
 \underline{Problématiques}~:
 \begin{itemize}
 \item Mener une étude comparative en vue de l'implémentation de ces méthodes dans le code massivement parallèle CanoP, UTIAS ayant développé une méthode adaptative pour la simulation de ces écoulements.
 \item Adapter la structure de données pour les méthodes numériques construites. CanoP, étant basées sur la librairie p4est, permet de gérer en parallèle des maillages adaptatifs et les inconnues sur ce maillage. %Une attention particulière sera tenue autour de la structure des données et de l'implémentation de ces outils.
-\item Implémenter ces outils dans CanoP.
+\item Implémenter ces outils dans CanoP. \\
 \end{itemize}
-\underline{Collaborations}~: L. Fréret, M.-A. N'Guessan, L. Séries, L. Gouarin, P. Kestener
+\underline{Collaborations}~: L. Fréret, L. Gouarin, P. Kestener, M.-A. N'Guessan, L. Séries
 
 
 \section*{Thématiques complémentaires}
 Clinton Groth est également reconnu pour ses contributions dans d'autres disciplines pour lesquels d'autres collaborations sont initiées.
 
-\paragraph{Combustion}
-Les enjeux de la modélisation de l'atomisation d'un jet en un nuage de gouttes décrite dans la partie précédente et sa combustion. Cette thématique complémentaire est également largement étudiée au CMAP autour de V. Giovangigli et M. Massot. \\
+\paragraph{Combustion \\ }
+La modélisation de l'atomisation d'un jet en un nuage de gouttes, décrite dans la partie précédente, sont cruciaux pour les applications industrielles liées à la combustion de carburant liquide. Cette thématique complémentaire autour de la combustion est également largement étudiée au CMAP autour de V. Giovangigli et M. Massot. \\ \\
 %
-\underline{Collaborations}~: V. Giovangigli, P. Cordesse, R. Di Battista, T. Pichard 
+\underline{Collaborations}~: P. Cordesse, R. Di Battista, V. Giovangigli, M. Massot, T. Pichard 
 
 
-\paragraph{Radiatif}
-Les modèles cinétiques utilisés dans la partie précédente ont une structure proche de ceux utilisés en transfert radiatif qui sont également étudiés au CMAP autour de T. Pichard et à UTIAS. Le doctorant J.-A. Sarr travaille sur ces thématiques dans l'équipe de C. Groth et a candidaté à la bourse \og{}Michael Smith Foreign Study Supplements Program\fg{} pour financer sa venue sur Paris sur la même période.  \\
+\paragraph{Radiatif \\ }
+Les modèles cinétiques utilisés dans la partie précédente ont une structure proche de ceux utilisés en transfert radiatif. Notamment, les méthodes numériques basées sur la méthode des moments avec une fermeture minimisant l'entropie (modèles $M_N$) sont également étudiées au CMAP autour de T. Pichard pour des applications en transfert radiatif et font partie du projet de thèse de J.-A. Sarr à UTIAS dans l'équipe de C. Groth. Ce dernier a candidaté à la bourse \og{}Michael Smith Foreign Study Supplements Program\fg{} pour financer sa venue sur Paris sur la même période, de février à avril 2020.  \\ \\
 %
-\underline{Collaborations}~: J.-A. Sarr, T. Pichard, F. Laurent, M. Massot
+\underline{Collaborations}~: F. Laurent-Nègre, M. Massot, T. Pichard, J.-A.~Sarr
 
-\paragraph{Plasma}
-C. Groth a déjà entamée des collaborations avec des équipes internes à l'école polytechnique ou proche autour de la modélisation cinétique et aux moments en physique des plasmas, notamment pour des applications liées à la propulsion ou à la production d'énergie. \\
+\paragraph{Plasma \\ }
+C. Groth a déjà entamée des collaborations avec des équipes de l'école polytechnique, au LPP et au CMAP, ou proche de l'école, au VKI à Bruxelles, autour de la modélisation cinétique et aux moments en physique des plasmas, notamment pour des applications liées à la propulsion ou à la production d'énergie. \\ \\
 %
-\underline{Collaborations}~: A. Alvarez-Laguna, A. Bourdon, T. Magin, Q. Wargnier, L. Reboul, M.~Massot
+\underline{Collaborations}~: A. Alvarez-Laguna, A. Bourdon, T. Magin, M.~Massot, L. Reboul, Q.~Wargnier
 
 \end{document}
